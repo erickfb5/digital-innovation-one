@@ -27,4 +27,4 @@ const compareNumbers = (num1, num2) => {
   }
 }
 
-compareNumbers(10,'10');
+compareNumbers(1,3);
