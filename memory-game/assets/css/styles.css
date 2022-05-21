@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+   height: 100vh;
+   background-color: rgba(14, 130, 207, 0.458);
+   display: flex;
+}
+
+.memory-game{
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
+  perspective: 1000px;
+  
+}
+
+.memory-card{
+  width: calc(120% - 10px);
+  height: calc(105% - 10px);
+  margin: 0;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .57s;
+}
+
+.memory-card:active{
+ transform: scale(.69);
+ transition: transform 2s
+}
+
+.memory-card.flip{
+  transform: rotateY(180deg);
+ }
+
+.front-face, .back-face{
+  width: 100%;
+  height: 75%;
+  background-color: rgba(190, 200, 200, 0);
+  position: absolute;
+  padding: 9px;
+  backface-visibility: hidden;
+}
+
+.front-face{ 
+  transform: rotateY(180deg);
+}
